@@ -1,0 +1,337 @@
+/* ---- Reset ---- */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  color: #fff;
+  background: #000;
+}
+
+/* ---- CSS variables that adapt by viewport ---- */
+:root {
+  /* базові значення (мобільні екрани) */
+  --gap: 14px;
+  --pad: 20px;
+  --hero-title: clamp(24px, 7.5vw, 36px);
+  --hero-sub: clamp(14px, 4.2vw, 20px);
+  --bullet-size: clamp(13px, 3.8vw, 16px);
+  --accuracy-size: clamp(14px, 4vw, 18px);
+  --cta-note: clamp(12px, 3.5vw, 16px);
+  --btn-size: clamp(16px, 4.5vw, 20px);
+  --btn-pad-y: 14px;
+  --btn-pad-x: 32px;
+}
+
+/* дуже низькі екрани */
+@media (max-height: 700px) {
+  :root {
+    --gap: 10px;
+    --pad: 16px;
+    --hero-title: clamp(20px, 6.8vw, 28px);
+    --hero-sub: clamp(12px, 3.8vw, 16px);
+    --bullet-size: clamp(11px, 3.4vw, 14px);
+    --accuracy-size: clamp(12px, 3.6vw, 16px);
+    --cta-note: clamp(11px, 3.2vw, 14px);
+    --btn-size: clamp(14px, 4vw, 18px);
+    --btn-pad-y: 12px;
+    --btn-pad-x: 28px;
+  }
+}
+
+/* надзвичайно низькі екрани */
+@media (max-height: 600px) {
+  :root {
+    --gap: 8px;
+    --pad: 12px;
+    --hero-title: clamp(18px, 6vw, 24px);
+    --hero-sub: clamp(11px, 3.4vw, 14px);
+    --bullet-size: clamp(10px, 3vw, 12px);
+    --accuracy-size: clamp(11px, 3.2vw, 14px);
+    --cta-note: clamp(10px, 2.8vw, 12px);
+    --btn-size: clamp(13px, 3.6vw, 16px);
+    --btn-pad-y: 10px;
+    --btn-pad-x: 24px;
+  }
+}
+
+/* десктоп та великі екрани */
+@media (min-width: 768px) {
+  :root {
+    --gap: 20px;
+    --pad: 40px;
+    --hero-title: 40px;
+    --hero-sub: 22px;
+    --bullet-size: 18px;
+    --accuracy-size: 20px;
+    --cta-note: 18px;
+    --btn-size: 22px;
+    --btn-pad-y: 16px;
+    --btn-pad-x: 48px;
+  }
+}
+
+/* ---- Layout ---- */
+.screen {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: calc(env(safe-area-inset-top) + var(--pad)) var(--pad)
+    calc(env(safe-area-inset-bottom) + var(--pad));
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .screen {
+    max-width: 700px;
+    padding: 60px 40px;
+  }
+}
+
+/* ---- Hero ---- */
+.hero {
+  text-align: center;
+  line-height: 1.1;
+  border: 2px solid #fff;
+  padding: 20px 16px;
+  border-radius: 0;
+}
+
+@media (max-height: 700px) {
+  .hero {
+    padding: 16px 14px;
+    border-width: 1.5px;
+  }
+}
+
+@media (max-height: 600px) {
+  .hero {
+    padding: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 28px 24px;
+    border-width: 2.5px;
+  }
+}
+
+.hero h1 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-size: var(--hero-title);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: #e5e5e5;
+  font-weight: 400;
+  font-size: var(--hero-sub);
+  letter-spacing: 0.01em;
+}
+
+@media (max-height: 600px) {
+  .subtitle {
+    margin-top: 6px;
+  }
+}
+
+/* ---- Gallery 2×2 ---- */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+@media (max-height: 700px) {
+  .gallery {
+    gap: 8px;
+  }
+}
+
+@media (max-height: 600px) {
+  .gallery {
+    gap: 6px;
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery {
+    gap: 14px;
+  }
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+/* ---- Accuracy (95%+) ---- */
+.accuracy {
+  margin: 0;
+  text-align: center;
+  font-size: var(--accuracy-size);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  flex: 0 0 auto;
+}
+
+.accuracy strong {
+  font-weight: 700;
+  font-size: 1.15em;
+}
+
+/* ---- Bullets ---- */
+.bullets {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 0;
+  padding: 16px 18px;
+  flex: 0 0 auto;
+}
+
+@media (max-height: 700px) {
+  .bullets {
+    padding: 14px 16px;
+    border-width: 1.5px;
+  }
+}
+
+@media (max-height: 600px) {
+  .bullets {
+    padding: 12px 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .bullets {
+    padding: 20px 24px;
+    border-width: 2.5px;
+  }
+}
+.bullets ul {
+  margin: 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style-type: disc;
+}
+
+@media (max-height: 600px) {
+  .bullets ul {
+    gap: 6px;
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .bullets ul {
+    gap: 10px;
+    padding-left: 26px;
+  }
+}
+
+.bullets li {
+  color: #fff;
+  font-size: var(--bullet-size);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+/* ---- CTA ---- */
+.cta {
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.cta-note {
+  margin: 0 0 10px;
+  color: #d0d0d0;
+  font-size: var(--cta-note);
+  font-weight: 400;
+}
+
+@media (max-height: 600px) {
+  .cta-note {
+    margin-bottom: 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cta-note {
+    margin-bottom: 14px;
+  }
+}
+
+.tg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  background: #229ed9;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--btn-size);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(34, 158, 217, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .tg-btn {
+    gap: 12px;
+    border-radius: 10px;
+  }
+}
+
+.tg-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(34, 158, 217, 0.5);
+}
+
+.tg-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 6px 20px rgba(34, 158, 217, 0.35);
+}
+
+.tg-ico {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+@media (max-height: 600px) {
+  .tg-ico {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .tg-ico {
+    width: 26px;
+    height: 26px;
+  }
+}
