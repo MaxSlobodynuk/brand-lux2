@@ -17,47 +17,47 @@ body {
 /* ---- CSS variables that adapt by viewport ---- */
 :root {
   /* базові значення (мобільні екрани) */
-  --gap: 14px;
-  --pad: 20px;
-  --hero-title: clamp(14px, 6vw, 24px);
-  --hero-sub: clamp(8px, 3.4vw, 12px);
-  --bullet-size: clamp(11px, 3.4vw, 14px);
-  --accuracy-size: clamp(12px, 3.6vw, 16px);
-  --cta-note: clamp(12px, 3.5vw, 16px);
-  --btn-size: clamp(16px, 4.5vw, 20px);
-  --btn-pad-y: 14px;
-  --btn-pad-x: 32px;
+  --gap: 10px;
+  --pad: 16px;
+  --hero-title: clamp(20px, 6.5vw, 28px);
+  --hero-sub: clamp(12px, 3.6vw, 16px);
+  --bullet-size: clamp(11px, 3.2vw, 14px);
+  --accuracy-size: clamp(12px, 3.4vw, 15px);
+  --cta-note: clamp(11px, 3vw, 13px);
+  --btn-size: clamp(14px, 4vw, 17px);
+  --btn-pad-y: 11px;
+  --btn-pad-x: 26px;
 }
 
 /* дуже низькі екрани */
 @media (max-height: 700px) {
   :root {
-    --gap: 10px;
-    --pad: 16px;
-    --hero-title: clamp(18px, 6.8vw, 26px);
-    --hero-sub: clamp(10px, 3.8vw, 14px);
-    --bullet-size: clamp(11px, 3.4vw, 14px);
-    --accuracy-size: clamp(12px, 3.6vw, 16px);
-    --cta-note: clamp(11px, 3.2vw, 14px);
-    --btn-size: clamp(14px, 4vw, 18px);
-    --btn-pad-y: 12px;
-    --btn-pad-x: 28px;
+    --gap: 8px;
+    --pad: 12px;
+    --hero-title: clamp(18px, 6vw, 24px);
+    --hero-sub: clamp(11px, 3.2vw, 14px);
+    --bullet-size: clamp(10px, 2.8vw, 12px);
+    --accuracy-size: clamp(11px, 3vw, 13px);
+    --cta-note: clamp(10px, 2.6vw, 12px);
+    --btn-size: clamp(13px, 3.6vw, 15px);
+    --btn-pad-y: 9px;
+    --btn-pad-x: 22px;
   }
 }
 
 /* надзвичайно низькі екрани */
 @media (max-height: 600px) {
   :root {
-    --gap: 8px;
-    --pad: 12px;
-    --hero-title: clamp(18px, 6vw, 24px);
-    --hero-sub: clamp(11px, 3.4vw, 14px);
-    --bullet-size: clamp(10px, 3vw, 12px);
-    --accuracy-size: clamp(11px, 3.2vw, 14px);
-    --cta-note: clamp(10px, 2.8vw, 12px);
-    --btn-size: clamp(13px, 3.6vw, 16px);
-    --btn-pad-y: 10px;
-    --btn-pad-x: 24px;
+    --gap: 6px;
+    --pad: 10px;
+    --hero-title: clamp(16px, 5.5vw, 20px);
+    --hero-sub: clamp(10px, 2.8vw, 12px);
+    --bullet-size: clamp(9px, 2.4vw, 11px);
+    --accuracy-size: clamp(10px, 2.6vw, 12px);
+    --cta-note: clamp(9px, 2.4vw, 11px);
+    --btn-size: clamp(12px, 3.2vw, 14px);
+    --btn-pad-y: 8px;
+    --btn-pad-x: 20px;
   }
 }
 
@@ -102,20 +102,21 @@ body {
   text-align: center;
   line-height: 1.1;
   border: 2px solid #fff;
-  padding: 20px 16px;
+  padding: 14px 12px;
   border-radius: 0;
 }
 
 @media (max-height: 700px) {
   .hero {
-    padding: 14px 12px;
-    border-width: 1px;
+    padding: 10px 10px;
+    border-width: 1.5px;
   }
 }
 
 @media (max-height: 600px) {
   .hero {
-    padding: 12px;
+    padding: 8px 10px;
+    border-width: 1.5px;
   }
 }
 
@@ -135,7 +136,7 @@ body {
 }
 
 .subtitle {
-  margin: 8px 0 0;
+  margin: 6px 0 0;
   color: #e5e5e5;
   font-weight: 400;
   font-size: var(--hero-sub);
@@ -144,7 +145,7 @@ body {
 
 @media (max-height: 600px) {
   .subtitle {
-    margin-top: 6px;
+    margin-top: 4px;
   }
 }
 
@@ -154,28 +155,23 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   flex: 0 0 auto;
-  max-width: 90%;
-  margin: 0 auto;
 }
 
 @media (max-height: 700px) {
   .gallery {
     gap: 8px;
-    max-width: 95%;
   }
 }
 
 @media (max-height: 600px) {
   .gallery {
     gap: 6px;
-    max-width: 95%;
   }
 }
 
 @media (min-width: 768px) {
   .gallery {
     gap: 14px;
-    max-width: 550px;
   }
 }
 
@@ -207,20 +203,21 @@ body {
   background: transparent;
   border: 2px solid #fff;
   border-radius: 0;
-  padding: 16px 18px;
+  padding: 12px 14px;
   flex: 0 0 auto;
 }
 
 @media (max-height: 700px) {
   .bullets {
     padding: 10px 12px;
-    border-width: 1px;
+    border-width: 1.5px;
   }
 }
 
 @media (max-height: 600px) {
   .bullets {
-    padding: 12px 14px;
+    padding: 8px 10px;
+    border-width: 1.5px;
   }
 }
 
@@ -232,17 +229,17 @@ body {
 }
 .bullets ul {
   margin: 0;
-  padding-left: 22px;
+  padding-left: 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
   list-style-type: disc;
 }
 
 @media (max-height: 600px) {
   .bullets ul {
-    gap: 6px;
-    padding-left: 20px;
+    gap: 3px;
+    padding-left: 18px;
   }
 }
 
@@ -268,7 +265,7 @@ body {
 }
 
 .cta-note {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   color: #d0d0d0;
   font-size: var(--cta-note);
   font-weight: 400;
@@ -276,7 +273,7 @@ body {
 
 @media (max-height: 600px) {
   .cta-note {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 }
 
@@ -322,15 +319,15 @@ body {
 }
 
 .tg-ico {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
 @media (max-height: 600px) {
   .tg-ico {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 }
 
