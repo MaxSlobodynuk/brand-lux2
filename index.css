@@ -19,8 +19,8 @@ body {
   /* базові значення (мобільні екрани) */
   --gap: 14px;
   --pad: 20px;
-  --hero-title: clamp(18px, 6vw, 28px);
-  --hero-sub: clamp(11px, 3.4vw, 16px);
+  --hero-title: clamp(14px, 6vw, 24px);
+  --hero-sub: clamp(8px, 3.4vw, 12px);
   --bullet-size: clamp(11px, 3.4vw, 14px);
   --accuracy-size: clamp(12px, 3.6vw, 16px);
   --cta-note: clamp(12px, 3.5vw, 16px);
@@ -34,8 +34,8 @@ body {
   :root {
     --gap: 10px;
     --pad: 16px;
-    --hero-title: clamp(20px, 6.8vw, 28px);
-    --hero-sub: clamp(12px, 3.8vw, 16px);
+    --hero-title: clamp(18px, 6.8vw, 26px);
+    --hero-sub: clamp(10px, 3.8vw, 14px);
     --bullet-size: clamp(11px, 3.4vw, 14px);
     --accuracy-size: clamp(12px, 3.6vw, 16px);
     --cta-note: clamp(11px, 3.2vw, 14px);
@@ -108,8 +108,8 @@ body {
 
 @media (max-height: 700px) {
   .hero {
-    padding: 16px 14px;
-    border-width: 1.5px;
+    padding: 14px 12px;
+    border-width: 1px;
   }
 }
 
@@ -154,29 +154,34 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   flex: 0 0 auto;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 @media (max-height: 700px) {
   .gallery {
     gap: 8px;
+    max-width: 95%;
   }
 }
 
 @media (max-height: 600px) {
   .gallery {
     gap: 6px;
+    max-width: 95%;
   }
 }
 
 @media (min-width: 768px) {
   .gallery {
     gap: 14px;
+    max-width: 550px;
   }
 }
 
 .gallery img {
   width: 100%;
-  aspect-ratio: 1 / 1.1; /* було 1 – стало трохи нижче */
+  aspect-ratio: 1;
   object-fit: cover;
   border-radius: 0;
   display: block;
@@ -208,8 +213,8 @@ body {
 
 @media (max-height: 700px) {
   .bullets {
-    padding: 14px 16px;
-    border-width: 1.5px;
+    padding: 10px 12px;
+    border-width: 1px;
   }
 }
 
